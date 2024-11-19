@@ -24,7 +24,7 @@
 <!-- login -->
     <section class="signup">
         <div class="container"> 
-            <p style="font-size: 90px; color: #FCBDD7; font-weight: 700; margin-top: -370px;">SIGN UP</p >
+            <p style="font-size: 90px; color: #FF5C8D; font-weight: 700; margin-top: -370px;">SIGN UP</p >
             <div class="wrapper" style="position: absolute;">
                 <div class="sign-up">
                     <form action="adduser.php" method="POST" style="margin-top: 30px;">
@@ -44,13 +44,13 @@
                         </div>
 
                         <div class="mb-3">
-                            <input type="password" class="forms" name="passwordcek" id="password" placeholder="Confirm Password">
+                            <input type="password" class="forms" name="passwordcek" id="password" placeholder="Password">
                         </div>
 
                         <button class="btn" type="submit">Sign Up</button>
                     </form>
                     <br>
-                    <p>Sudah puya akun? <a href="log_in.php" style="color: #D14D72;">Sign In</a></p>
+                    <p>Already have an account? <a href="login.php" >Sign In</a></p>
                 </div>
             </div>
         </div>
@@ -61,12 +61,12 @@
             <div class="wrapper">
                 <div class="row">
                     <div class="col">
-                        <h5 style="font-weight: 800; margin-bottom: 20px;">Luminelle.</h5>
+                        <h5 style="font-weight: 800; margin-bottom: 20px; color: white;">Luminelle.</h5>
                         <p class="isisub" style="vertical-align: bottom;">2024. Created by Cindy Nabella Susanto and Aulia Putri Naharani</p>
                     </div>
 
                     <div class="col">
-                        <p class="subjudul">Payments</p>
+                        <p class="subjudul" style="color:white;">Payments</p>
                         <div class="box-bank">
                             <img src="img/bank/Mandiri.png" alt="Bank Mandiri">
                             <img src="img/bank/BCA.png" alt="Bank BCA">
@@ -82,13 +82,13 @@
                     </div>
 
                     <div class="col">
-                        <p class="subjudul">Menu</p>
+                        <p class="subjudul" style="color:white;">Menu</p>
                         <a href="#home">Home</a><br>
                         <a href="#about">About Us</a>
                     </div>                    
 
                     <div class="col">
-                        <p class="subjudul">Get in touch</p>
+                        <p class="subjudul" style="color:white;">Get in touch</p>
                         <p class="isisub">For newest update or asking for question</p>
                         <div class="icon">
                             <i class="bi bi-facebook"></i> 
@@ -121,7 +121,7 @@
     header nav ul li, a, button {
         font-weight: 500;
         font-size: 16px;
-        color: pink;
+        color: #FF5C8D;
         text-decoration: none;
     }
 
@@ -157,7 +157,7 @@
     }
 
     .nav_links li:hover {
-        border-bottom: solid 2px pink;
+        border-bottom: solid 2px #FF5C8D;
     }
 
     .nav_links li a:hover {
@@ -167,23 +167,24 @@
     header button {
         padding: 0px 20px;
         height: 30px;
-        background-color: black;
+        background-color: black;;
         border: none;
         border-radius: 10px;
-        color: pink;
+        color: white;
         cursor: pointer;
     }
 
     header button:hover {
-        background-color: black;
+        background-color: white;
+        color: black;
     }
 
 /* signup */
     .signup{
         width: 100%;
         height: 100vh;
-        /* background: linear-gradient(to right, pink, #FF7777); */
-        /* background-color: pink; */
+        /* background: linear-gradient(to right, #FF5C8D, #FF7777); */
+        /* background-color: #FF5C8D; */
     }
 
     .signup .container {
@@ -211,26 +212,31 @@
         width: 350px;
         height: 40px;
         background-color: transparent;
-        border: solid 1px #FCBDD7;
-        color: #FCBDD7;
+        border: solid 1px #FF5C8D;
+        color: #FF5C8D;
         border-radius: 5px;
         padding-left: 20px;
         outline: none;
     }
 
     input::placeholder {
-        color: #FCBDD7;
+        color: #FF5C8D;
     }
     
     .signup button {
         width: 100%;
         /* border: solid 1px white; */
-        background-color: #FCBDD7;
+        background-color: #FF5C8D;
         color: white;
     }
 
     .signup a {
-        color: #FF7777;
+        color: #FFC0D3;
+        text-decoration: underline;
+    }
+
+    .signup .container .wrapper .sign-up a:hover{
+        color: black;
         text-decoration: underline;
     }
     
@@ -239,7 +245,7 @@
         /* margin-top: -50px; */
         width: 100%;
         height: 25vh;
-        background-color: pink;
+        background-color: #FF5C8D;
     }
 
     .box-bank img {
@@ -262,12 +268,12 @@
     }
 
     footer .container .wrapper .row .col .isisub {
-        color: grey;
+        color: white;
         font-size: 12px;
     }
 
     footer .container .wrapper .row .col a {
-        color: grey;
+        color: white;
         font-weight: 400;
     }
 
@@ -276,7 +282,7 @@
     }
 
     .icon i {
-        color: grey;
+        color: white;
     }
 
 </style>
