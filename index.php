@@ -10,7 +10,16 @@
 
 <body>
 
-    <?php include "navbar_luar.php"; ?>
+    <header>
+        <h3 style="font-weight: 800;">Luminelle.</h3>
+        <nav>
+            <ul class="nav_links" style="margin-left: -50px;">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About Us</a></li>
+            </ul>
+        </nav>
+        <a class="nav-link" href="#contact"><button>Contact</button></a>
+    </header>
 
     <!-- Home Screen -->
     <section class="home" id="home">
@@ -36,28 +45,28 @@
             <p style="font-size: 20px; text-align: center;">Luminelle merupakan sebuah platform belanja online yang menyediakan berbagai produk kecantikan berkualitas untuk kulit wajah dan tubuh. Mulai dari berbagai brand internasional hingga brand lokal. Beberapa keunggulan kami lainnya: </p>
     
             <div class="wrapper">
-                <div class="card">
+                <div class="card" style="color: white;">
                     <div class="card-body">
                         <i class="bi bi-percent"></i>
                         <p class="card-text">Produk Terjamin Keaslian.</p>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" style="color: white;">
                     <div class="card-body">
                         <i class="bi bi-truck"></i>
                         <p class="card-text">Pengiriman Cepat dan Terjamin ke Seluruh Indonesia.</p>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" style="color: white;">
                     <div class="card-body">
                         <i class="bi bi-patch-check"></i>
                         <p class="card-text">Produk Terlengkap dan Berkualitas.</p>
                     </div>
                 </div>
 
-                <div class="card">
+                <div class="card" style="color: white;">
                     <div class="card-body">
                         <i class="bi bi-cash-stack"></i>
                         <p class="card-text">Jaminan Uang kembali Ketika Produk Tidak Sesuai.</p>
@@ -73,12 +82,12 @@
             <div class="wrapper">
                 <div class="row">
                     <div class="col">
-                        <h5 style="font-weight: 800; margin-bottom: 20px;">Luminelle.</h5>
+                        <h5 style="font-weight: 800; margin-bottom: 20px; color: white">Luminelle.</h5>
                         <p class="isisub" style="vertical-align: bottom;">2024. Created by Cindy Nabella Susanto and Aulia Putri Naharani</p>
                     </div>
 
                     <div class="col">
-                        <p class="subjudul">Payments</p>
+                        <p class="subjudul" style="color: white;">Payments</p>
                         <div class="box-bank">
                             <img src="img/bank/Mandiri.png" alt="Bank Mandiri">
                             <img src="img/bank/BCA.png" alt="Bank BCA">
@@ -94,13 +103,13 @@
                     </div>
 
                     <div class="col">
-                        <p class="subjudul">Menu</p>
+                        <p class="subjudul" style="color: white">Menu</p>
                         <a href="#home">Home</a><br>
                         <a href="#about">About Us</a>
                     </div>                    
 
                     <div class="col">
-                        <p class="subjudul">Get in touch</p>
+                        <p class="subjudul" style="color: white">Get in touch</p>
                         <p class="isisub">For newest update or asking for question</p>
                         <div class="icon">
                             <i class="bi bi-facebook"></i> 
@@ -130,7 +139,65 @@
     }
 
 /* header */
-   
+    header nav ul li, a, button {
+        font-weight: 500;
+        font-size: 16px;
+        color: #FF5C8D;
+        text-decoration: none;
+    }
+
+    .nav-links li a {
+        transition: all 0.3s ease 0;
+    }
+
+    header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        background-color: white;
+        padding: 30px 10%;
+        height: 50px;
+        margin-top: 20px;
+    }
+
+    nav {
+        display: flex;
+        align-items: center;
+    }
+
+    .nav_links {
+        display: flex;
+        list-style: none;
+        margin: 0; 
+        padding: 0; 
+    }
+
+    .nav_links li {
+        margin: 0 10px; /* Beri jarak antar elemen */
+    }
+
+    .nav_links li:hover {
+        border-bottom: solid 2px #FF5C8D;
+    }
+
+    .nav_links li a:hover {
+        color: black;
+    }
+
+    button, .btn {
+        padding: 0px 20px;
+        height: 30px;
+        background-color: white;
+        border: none;
+        border-radius: 10px;
+        color: #FF5C8D;
+        cursor: pointer;
+    }
+
+    button:hover {
+        background-color: black;
+    }
+
 /*  home */
 
     .home .container {
@@ -149,15 +216,15 @@
         width: 200px;
         height: 40px;
         padding: 0px 20px;
-        color: pink;
-        background-color: black;
+        color: #FF5C8D;
+        background-color: white;
         border: none;
         border-radius: 10px;
         cursor: pointer;
     }
 
     .home button:hover {
-        background-color: white;
+        background-color: #524A4E;
     }
 
     .home img {
@@ -173,7 +240,7 @@
 
     .judul {
         font-size: 70px;
-        color: pink;
+        color: #FF5C8D;
         text-align: center;
     }
 
@@ -193,8 +260,8 @@
         height: 200px;
         border: none;
         border-radius: 20px;
-        background: linear-gradient(to right, pink, #FF7777);
-        /* background-color: pink; */
+        background: linear-gradient(to right, #FF5C8D, #FF7777);
+        /* background-color: #FF5C8D; */
         box-shadow: 0px 0px 20px rgba(0,0,0,0.05 );
     }
 
@@ -217,7 +284,7 @@
         margin-top: -50px;
         width: 100%;
         height: 25vh;
-        background-color: pink;
+        background-color: #FF5C8D;
     }
 
     .box-bank img {
@@ -240,12 +307,12 @@
     }
 
     footer .container .wrapper .row .col .isisub {
-        color: grey;
+        color: white;
         font-size: 12px;
     }
 
     footer .container .wrapper .row .col a {
-        color: grey;
+        color: white;
         font-weight: 400;
     }
 
@@ -254,7 +321,7 @@
     }
 
     .icon i {
-        color: grey;
+        color: white;
     }
 
 </style>
