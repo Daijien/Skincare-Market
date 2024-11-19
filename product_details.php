@@ -30,14 +30,8 @@ include "connection.php"; // Include database connection
     <div class="wrapper">
         <?php
         include "connection.php";
-         
-        if(isset($_GET['item_id'])){
-          $item_id=$_GET['item_id'];
-        } elseif (isset($_POST['item_id'])){
-          $item_id=$_POST['item_id'];
-        }
-      
-       // $item_id=$_POST['item_id'];
+
+        $item_id=$_POST['item_id'];
         $query=mysqli_query($konek,"SELECT * FROM item WHERE item_id='$item_id';");
         while($data=mysqli_fetch_array($query))
         { 
@@ -83,7 +77,7 @@ include "connection.php"; // Include database connection
             <div class="modal-body">
                 <?php
                   include "connection.php";
-                  //$item_id=$_POST['item_id'];
+                  $item_id=$_POST['item_id'];
 
                   $query=mysqli_query($konek," SELECT * from item where item_id='$item_id';");
                   while($data=mysqli_fetch_array($query))
@@ -123,7 +117,7 @@ include "connection.php"; // Include database connection
           <div class="modal-body">
             <?php
             include "connection.php";
-            //$item_id=$_POST['item_id'];
+            $item_id=$_POST['item_id'];
 
             $query=mysqli_query($konek," SELECT * from item where item_id='$item_id'");
             while($data=mysqli_fetch_array($query))

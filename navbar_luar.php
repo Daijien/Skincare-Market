@@ -30,15 +30,11 @@
 </html>
 
 <style>
-     header nav ul li, a, button {
+     header nav ul li, a{
         font-weight: 500;
         font-size: 20px;
-        color: pink;
+        color: #FF5C8D;
         text-decoration: none;
-    }
-
-    .nav-links li a {
-        transition: all 0.3s ease 0;
     }
 
     header {
@@ -51,42 +47,37 @@
         margin-top: 20px;
     }
 
-    nav {
+    header nav {
         display: flex;
         align-items: center;
     }
 
-    .nav_links {
+    header nav .nav_links {
         display: flex;
         list-style: none;
         margin: 0; 
         padding: 0; 
     }
 
-    .nav_links li {
+    header nav ul li {
         margin: 0 10px; /* Beri jarak antar elemen */
     }
 
-    .nav_links li:hover {
-        border-bottom: solid 2px pink;
+    header nav ul li:hover {
+        border-bottom: solid 2px #FF5C8D;
     }
 
-    .nav_links li a:hover {
+    header nav ul li a:hover {
         color: black;
     }
 
-    button {
+    header a button {
         padding: 0px 20px;
-        height: 30px;
+        height: 35px;
         background-color: black;
         border: none;
         border-radius: 10px;
-        color: pink;
+        color: white;
         cursor: pointer;
     }
-
-    button:hover {
-        background-color: black;
-    }
-
 </style>

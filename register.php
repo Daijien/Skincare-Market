@@ -9,18 +9,7 @@
 </head>
 
 <body>
-
-    <header>
-        <h3 style="font-weight: 800;">Luminelle.</h3>
-        <nav>
-            <ul class="nav_links" style="margin-left: -50px;">
-                <li><a href="login.php#home">Home</a></li>
-                <li><a href="login.php#about">About Us</a></li>
-            </ul>
-        </nav>
-        <a class="nav-link" href="#contact"><button>Contact</button></a>
-    </header>
-
+    <?php include "navbar_luar.php"; ?>
 <!-- login -->
     <section class="signup">
         <div class="container"> 
@@ -29,8 +18,18 @@
                 <div class="sign-up">
                     <form action="adduser.php" method="POST" style="margin-top: 30px;">
                         <br>
-                        <p style="text-align: center; font-weight: 500;">Hello!</p>
-
+                        <p style="text-align: center; font-weight: 500;">
+                        <?php 
+                            if(isset($_GET['pesan'])){
+                                if ($_GET['pesan'] == "gagal")
+                                    echo "Password Tidak Sama!";
+                                else if ($_GET['pesan'] == "kosong")
+                                    echo "Harap Masukkan Data yang Sah!";
+                            } else {
+                                echo "Hello!";
+                            }
+                        ?>
+                        </p>                    
                         <div class="mb-3">
                             <input type="text" class="forms" name="username" id="username" placeholder="Username">
                         </div>
@@ -44,63 +43,19 @@
                         </div>
 
                         <div class="mb-3">
-                            <input type="password" class="forms" name="passwordcek" id="password" placeholder="Password">
+                            <input type="password" class="forms" name="passwordcek" id="password" placeholder="Repeat Password">
                         </div>
 
                         <button class="btn" type="submit">Sign Up</button>
                     </form>
                     <br>
-                    <p>Already have an account? <a href="login.php" >Sign In</a></p>
+                    <p>Already have an account? <a href="log_in.php">Sign In</a></p>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="contact">
-        <div class="container">
-            <div class="wrapper">
-                <div class="row">
-                    <div class="col">
-                        <h5 style="font-weight: 800; margin-bottom: 20px; color: white;">Luminelle.</h5>
-                        <p class="isisub" style="vertical-align: bottom;">2024. Created by Cindy Nabella Susanto and Aulia Putri Naharani</p>
-                    </div>
-
-                    <div class="col">
-                        <p class="subjudul" style="color:white;">Payments</p>
-                        <div class="box-bank">
-                            <img src="img/bank/Mandiri.png" alt="Bank Mandiri">
-                            <img src="img/bank/BCA.png" alt="Bank BCA">
-                            <img src="img/bank/BRI.png" alt="Bank BRI">
-                            <br>
-                            <img src="img/bank/Bank_Raya.png" alt="Bank Bank_Raya">
-                            <img src="img/bank/SeaBank.png" alt="Bank SeaBank">
-                            <img src="img/bank/BSI.png" alt="Bank BSI">
-                            <br>
-                            <img src="img/bank/BNI.png" alt="Bank BNI">
-                            <img src="img/bank/BTN.png" alt="Bank BTN">
-                        </div>
-                    </div>
-
-                    <div class="col">
-                        <p class="subjudul" style="color:white;">Menu</p>
-                        <a href="#home">Home</a><br>
-                        <a href="#about">About Us</a>
-                    </div>                    
-
-                    <div class="col">
-                        <p class="subjudul" style="color:white;">Get in touch</p>
-                        <p class="isisub">For newest update or asking for question</p>
-                        <div class="icon">
-                            <i class="bi bi-facebook"></i> 
-                            <i class="bi bi-twitter-x"></i>
-                            <i class="bi bi-instagram"></i>
-                            <i class="bi bi-envelope"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <?php include "footer.php"; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
@@ -117,74 +72,12 @@
         padding: 0;
     }
 
-/* header */
-    header nav ul li, a, button {
-        font-weight: 500;
-        font-size: 16px;
-        color: #FF5C8D;
-        text-decoration: none;
-    }
-
-    .nav-links li a {
-        transition: all 0.3s ease 0;
-    }
-
-    header {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        background-color: white;
-        padding: 30px 10%;
-        height: 50px;
-        margin-top: 20px;
-        /* border-bottom: solid 1px black; */
-    }
-
-    nav {
-        display: flex;
-        align-items: center;
-    }
-
-    .nav_links {
-        display: flex;
-        list-style: none;
-        margin: 0; 
-        padding: 0; 
-    }
-
-    .nav_links li {
-        margin: 0 10px; /* Beri jarak antar elemen */
-    }
-
-    .nav_links li:hover {
-        border-bottom: solid 2px #FF5C8D;
-    }
-
-    .nav_links li a:hover {
-        color: black;
-    }
-
-    header button {
-        padding: 0px 20px;
-        height: 30px;
-        background-color: black;;
-        border: none;
-        border-radius: 10px;
-        color: white;
-        cursor: pointer;
-    }
-
-    header button:hover {
-        background-color: white;
-        color: black;
-    }
-
 /* signup */
     .signup{
         width: 100%;
         height: 100vh;
-        /* background: linear-gradient(to right, #FF5C8D, #FF7777); */
-        /* background-color: #FF5C8D; */
+        /* background: linear-gradient(to right, pink, #FF7777); */
+        /* background-color: pink; */
     }
 
     .signup .container {
@@ -195,7 +88,7 @@
         align-items: center;
     }
 
-    .signup .wrapper {
+    .signup .container .wrapper {
         width: 450px;
         height: 450px;
         border-radius: 30px;
@@ -219,70 +112,24 @@
         outline: none;
     }
 
-    input::placeholder {
+    form input::placeholder {
         color: #FF5C8D;
     }
     
-    .signup button {
+    form button {
         width: 100%;
         /* border: solid 1px white; */
         background-color: #FF5C8D;
         color: white;
     }
 
-    .signup a {
-        color: #FFC0D3;
+    .sign-up a {
+        color: #FF5C8D;
         text-decoration: underline;
     }
 
-    .signup .container .wrapper .sign-up a:hover{
+    .sign-up a:hover {
         color: black;
         text-decoration: underline;
     }
-    
-/* footer */
-    footer {
-        /* margin-top: -50px; */
-        width: 100%;
-        height: 25vh;
-        background-color: #FF5C8D;
-    }
-
-    .box-bank img {
-        width: 50px;
-        margin: 5px;
-        opacity: 70%;
-    }
-    
-    .icon i{
-        color: white;
-        margin-right: 10px;
-    }
-
-    footer .container .wrapper .row {
-        padding-top: 20px;
-    }
-
-    footer .container .wrapper .row .col .subjudul {
-        font-weight: 600;
-    }
-
-    footer .container .wrapper .row .col .isisub {
-        color: white;
-        font-size: 12px;
-    }
-
-    footer .container .wrapper .row .col a {
-        color: white;
-        font-weight: 400;
-    }
-
-    footer .container .wrapper .row .col a:hover {
-        color: black;
-    }
-
-    .icon i {
-        color: white;
-    }
-
 </style>

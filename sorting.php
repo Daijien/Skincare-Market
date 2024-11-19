@@ -24,9 +24,9 @@
     }
 
     if ( isset($pricemin) && isset($pricemax) ) 
-        header("location:../product.php?order=$orderBy&min=$pricemin&max=$pricemax");
+        header("location:product.php?order=$orderBy&min=$pricemin&max=$pricemax");
     else 
-        header("location:../product.php?order=$orderBy");
+        header("location:product.php?order=$orderBy");
 
 
     exit();

@@ -22,7 +22,7 @@ include "connection.php"; // Include database connection
 <body>
     <?php include "navbar.php"?>
 
-    <div class="container mt-5">
+    <div class="container mt-5" style="height: 100vh;">
         <br>
             <form action="searchbrand.php" class="d-flex" role="search" method="POST">
                 <input name="cari" class="form-control me-2" type="search" placeholder="Search" aria-label="Search">

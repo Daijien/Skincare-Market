@@ -23,17 +23,11 @@ include "connection.php"; // Include database connection
 
 <!-- Isi web -->
     <section class="isiweb">
-        <div class="container">
-            <!-- <br>
-                <form action="searchbrand.php" class="d-flex" role="search">
-                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-outline" type="submit"><i class="bi bi-search"></i></button>
-                </form> -->
+        <div class="container" style="height: 100vh;">
             <br> 
-
             <div class="wrapper" style="display: flex;">
-                
-                <form action="query/sorting.php" method="POST" class="col-2" style="margin-right: 20px;">
+                <?php if(empty($_POST['brand_id'])){ ?>
+                    <form action="sorting.php" method="POST" class="col-2" style="margin-right: 20px;">
                     <h4>Filter</h4>
                     <hr>
                     <h6>Pengurutan</h6>
@@ -58,13 +52,13 @@ include "connection.php"; // Include database connection
                         <button type="reset" style="width: 100%;">Hapus</button>
                     </div>
                 </form>
+                <?php } ?>
 
                 <div class="wrap" style="text-align: center;">
                     <form action="product_details.php" method="POST">
                         <?php
                             include "connection.php";
 
-                            // get nilai dari header
                             $orderBy = isset($_GET['order']) ? $_GET['order'] : "RAND()";
                             $pricemin = isset($_GET['min']) ? $_GET['min'] : null;
                             $pricemax = isset($_GET['max']) ? $_GET['max'] : null;
@@ -75,18 +69,15 @@ include "connection.php"; // Include database connection
                                 $brand_id = null; 
                             }
                                     
-
                             echo "<div class='main'>";
 
-                            if ( isset($pricemin) && isset($pricemax) )
-                            {                            
+                            if ( isset($pricemin) && isset($pricemax) ){                            
                                 if ( isset($brand_id) )
                                     $query = mysqli_query($konek, "SELECT * FROM item WHERE brand_id='$brand_id' AND Price BETWEEN $pricemin AND $pricemax ORDER BY $orderBy");
                                 else
                                     $query = mysqli_query($konek, "SELECT * FROM item WHERE Price BETWEEN $pricemin AND $pricemax ORDER BY $orderBy LIMIT 30");
                             }
-                            else 
-                            {
+                            else {
                                 if (  isset($brand_id)  )
                                     $query = mysqli_query($konek," SELECT * FROM item WHERE brand_id='$brand_id' ORDER BY $orderBy");
                                 else 
@@ -96,7 +87,7 @@ include "connection.php"; // Include database connection
                             while($data = mysqli_fetch_array($query))
                             { 
                             ?>
-                                <button type="submit" name="item_id" value="<?php echo $data['Item_ID']; ?>">
+                                <button type="submit" name="item_id" value="<?php echo $data['Item_ID']; ?>" <?php if($data['stock']== 0) echo "disabled"?>>
                                 <div class="kotak">
                                     <div class="atas" style="height: 350px;">
                                         <img src="img/<?php echo $data['Brand_ID']; ?>/<?php echo $data['Item_ID']; ?>.jpg" alt="" style="height: 140px;"> 
@@ -106,8 +97,7 @@ include "connection.php"; // Include database connection
                                         <p style="margin-bottom: 0%; text-align: right; "><?php echo "<b>Rp" . number_format($data['Price']) . "</b>" ?></p>
                                     </div>
                                 </div>
-                                </button>  
-                    
+                                </button>                     
                             <?php }
                             echo "</div>";
                         ?>
@@ -158,22 +148,17 @@ include "connection.php"; // Include database connection
     .main button{
         background-color: #EEEEEE;
         border: none;
-        /* border: solid 1px black; */
         border-radius: 5px;
         margin: 7px;
         box-shadow: 0px 0px 10px rgba(0,0,0,0.2);c
     }
 
     .main img {
-        /* opacity: 0.7;
-        transition: opacity 0.3s; */
         margin: 5x;
-
     }
 
      .kotak {
         background-color: transparent;
-        /* border: solid 1px #96989A; */
         margin: 5px; 
         padding: 5px;
         width: 150px;

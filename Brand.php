@@ -17,6 +17,7 @@
 
 <body>
 <?php include "navbar.php"; ?>
+<br>
 
 <section class="slide">
     <div class="container">
@@ -30,13 +31,13 @@
             <div id="carouselExampleAutoplaying" class="carousel slide" data-bs-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="img/s1.jpeg" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="img/s2.jpeg" class="d-block w-100">
                     </div>
                     <div class="carousel-item">
-                    <img src="..." class="d-block w-100" alt="...">
+                    <img src="img/s3.jpeg" class="d-block w-100">
                     </div>
                 </div>
                 <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleAutoplaying" data-bs-slide="prev">
@@ -74,7 +75,6 @@
             </div>
         </div>
     </section>
-
     <?php include "footer.php"; ?>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>

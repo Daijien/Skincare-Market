@@ -23,10 +23,12 @@ include "connection.php"; // Include database connection
     <?php include "navbar.php"; ?>
 
 <!-- Isi web -->
-    <div class="container" style="text-align: center;">
+    <div class="container" style="text-align: center; height: 100vh;">
 
     <br>
     <form action="update_cart.php" method="POST">
+        <h3>Cart</h3>
+        <hr>
         <table>
             <?php
             $query = mysqli_query($konek, "SELECT c.cart_id, i.name, i.item_id, i.price, i.stock, c.quantity, c.quantity * price as total, i.brand_id FROM cart c JOIN item i ON c.item_id = i.item_id WHERE c.user_id='$user_id'");
@@ -53,7 +55,8 @@ include "connection.php"; // Include database connection
             } ?>
         </table>
         <br>
-        <button type="submit" class="submit">Update Cart</button>
+        <?php if ($row > 0) {
+        echo "<button type='submit' class='submit'>Update Cart</button>"; } ?>
     </form>
 
     </div>

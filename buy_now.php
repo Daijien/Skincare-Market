@@ -26,32 +26,11 @@ $total=$price*$quantity;
 
 <body>
 <!-- Navbar -->
-    <nav class="navbar fixed-top">
-        <div class="container-fluid">
-            <h4> <b>Luminelle</b> </h4>
-            <div class="rightcontent">
-                <!-- logo keranjang -->
-                <a href=""> <i class="bi bi-basket3" style="margin-right: 10px;"></i> </a>
-
-                <div class="btn-group">
-                    <button type="button" class="btn dropdown" data-bs-toggle="dropdown" data-bs-display="static" aria-expanded="false">
-                        <i class="bi bi-list"></i>
-                    </button>
-                    <ul class="dropdown-menu dropdown-menu-lg-end">
-                        <li><a class="dropdown-item" href="profile.php">Profile</a></li>
-                        <li><a class="dropdown-item" href="index.php">Log Out</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </nav>
+    <?php include "navbar.php"; ?>
 
 <!-- Isi web -->
-<div class="container text-center my-5">
-    <!-- Search bar -->
-    
+<div class="container text-center my-5" style="height: 100vh;"> 
     <hr class="mb-4">
-
         <table class="table text-center mb-4">
                 <tr>
                     <th>Product</th>
@@ -60,7 +39,6 @@ $total=$price*$quantity;
                     <th>Quantity</th>
                     <th>Total</th>
                 </tr>
-          
             <tbody>
                 <?php  ?>
                     <tr>
@@ -88,10 +66,8 @@ $total=$price*$quantity;
         <div class="col-md-6 d-flex flex-column justify-content-center">
             <div class="card p-3">
                 <h6 class="fw-bold text-success">Free Shipping</h6>
-                <h6>Total Amount: <span class="fw-bold text-dark">$<?php echo number_format($total, 2); ?></span></h6>
-
-                <form action="transaction"></form>
-                <button type="button" class="btn btn-primary mt-3" data-bs-toggle="modal" data-bs-target="#exampleModalCheckout" onclick="setModalAddress()">Checkout</button>
+                <h6>Total Amount: <span class="fw-bold text-dark">Rp. <?php echo number_format($total, 2); ?></span></h6>
+                <button type="button" class="btn mt-3" data-bs-toggle="modal" data-bs-target="#exampleModalCheckout" onclick="setModalAddress()" style="border: none; background-color: #FF5C8D; color: white;">Checkout</button>
 
                 <div class="modal fade" id="exampleModalCheckout" tabindex="-1" aria-labelledby="exampleModalCheckoutLabel" aria-hidden="true">
                     <div class="modal-dialog">
@@ -112,7 +88,7 @@ $total=$price*$quantity;
                             </div>
                             <div class="modal-footer">
                                   <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                  <button type="submit" class="btn btn-primary" data-bs-dismiss="modal">Confirm Purchase</button>
+                                  <button type="submit" class="btn" data-bs-dismiss="modal" style="border: none; background-color: #FF5C8D; color: white;">Confirm Purchase</button>
                             </div>
                         </div>
                         </form>
@@ -123,10 +99,8 @@ $total=$price*$quantity;
     </div>
 </div>
 
+<?php include "footer.php"; ?>
 
-
-
-        
 <script>
 function setModalAddress() {
     document.getElementById("modalAddress").value = document.getElementById("address").value;
@@ -138,16 +112,6 @@ function setModalAddress() {
 </html>
 
 <style>
-    body {
-        padding-top: 60px; /* Sesuaikan dengan tinggi navbar */
-        margin-top: 50px;
-    }
-
-    .brand {
-        display: flex;
-        flex-direction: row;
-    }
-
     img {
         margin: 10px;
     }
