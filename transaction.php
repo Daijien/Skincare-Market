@@ -22,8 +22,7 @@
        }
     }
     else {
-        
-        exit();
+        header("location: transaction_failed.php");
     } 
 
 ?>  
